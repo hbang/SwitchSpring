@@ -1,0 +1,9 @@
+Package: ws.hbang.switchspring
+Name: SwitchSpring
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Respring from iOS 7 app switcher
+Maintainer: HASHBANG Productions <support@hbang.ws>
+Author: HASHBANG Productions <support@hbang.ws>
+Section: Tweaks
