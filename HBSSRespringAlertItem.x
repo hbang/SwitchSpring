@@ -17,7 +17,6 @@ SBAppSliderController *controller;
 }
 
 - (void)alertView:(id)alertView clickedButtonAtIndex:(int)index {
-	%log;
 	if (index == 1) {
 		[(SpringBoard *)[UIApplication sharedApplication] relaunchSpringBoard];
 	} else {

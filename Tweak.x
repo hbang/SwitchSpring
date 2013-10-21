@@ -6,12 +6,10 @@
 %hook SBAppSliderController
 
 - (BOOL)sliderScroller:(SBAppSliderScrollingViewController *)scroller isIndexRemovable:(unsigned)index {
-	%log;
 	return index == 0 ? YES : %orig;
 }
 
 - (void)sliderScroller:(SBAppSliderScrollingViewController *)scroller itemWantsToBeRemoved:(unsigned)index {
-	%log;
 	if (index != 0) {
 		%orig;
 		return;
