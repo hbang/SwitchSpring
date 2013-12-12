@@ -1,4 +1,5 @@
-TARGET = simulator:clang:7.0:7.1
+TARGET = :clang:7.1
+ARCHS = armv7s arm64
 
 include theos/makefiles/common.mk
 
