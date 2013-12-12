@@ -5,21 +5,17 @@
 
 %hook SBAppSliderController
 
-- (BOOL)sliderScroller:(SBAppSliderScrollingViewController *)scroller isIndexRemovable:(unsigned)index {
+- (BOOL)sliderScroller:(SBAppSliderScrollingViewController *)scroller isIndexRemovable:(NSUInteger)index {
 	return index == 0 ? YES : %orig;
 }
 
-- (void)sliderScroller:(SBAppSliderScrollingViewController *)scroller itemWantsToBeRemoved:(unsigned)index {
+- (void)sliderScroller:(SBAppSliderScrollingViewController *)scroller itemWantsToBeRemoved:(NSUInteger)index {
 	if (index != 0) {
 		%orig;
 		return;
 	}
 
 	HBSSRespringAlertItem *alert = [[[%c(HBSSRespringAlertItem) alloc] initWithController:self] autorelease];
-	alert.alertHeader = @"Restart SpringBoard?";
-	alert.defaultButtonTitle = @"Restart";
-	alert.otherButtonTitle = @"Cancel";
-
 	[(SBAlertItemsController *)[%c(SBAlertItemsController) sharedInstance] activateAlertItem:alert];
 }
 

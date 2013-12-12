@@ -1,8 +1,8 @@
-#import <SpringBoard/SBUserNotificationAlert.h>
+#import <SpringBoardUI/SBAlertItem.h>
 
 @class SBAppSliderController;
 
-@interface HBSSRespringAlertItem : SBUserNotificationAlert
+@interface HBSSRespringAlertItem : SBAlertItem
 
 - (instancetype)initWithController:(SBAppSliderController *)controller;
 
