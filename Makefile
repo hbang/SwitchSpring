@@ -1,5 +1,5 @@
 TARGET = :clang:7.1
-ARCHS = armv7s arm64
+ARCHS = armv7 arm64
 
 include theos/makefiles/common.mk
 
