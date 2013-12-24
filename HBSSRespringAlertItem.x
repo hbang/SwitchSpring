@@ -50,17 +50,23 @@ SBAppSliderController *controller;
 		case 1:
 		{
 			resetScrollViews();
+			[controller sliderScroller:controller.pageController itemTapped:0];
+
+			NSString *nowPlayingApp = ((SBMediaController *)[%c(SBMediaController) sharedInstance]).nowPlayingApplication.bundleIdentifier;
 
 			NSUInteger count = [controller sliderScrollerItemCount:controller.pageController];
 			NSUInteger current = 1;
 
 			for (NSUInteger i = 1; i < count; i++) {
-				if ([controller sliderScroller:controller.pageController isIndexRemovable:current]) {
+				if ([[controller _displayIDAtIndex:current] isEqualToString:nowPlayingApp]) {
+					continue;
+				} else if ([controller sliderScroller:controller.pageController isIndexRemovable:current]) {
 					[controller sliderScroller:controller.pageController itemWantsToBeRemoved:current];
 				} else {
 					current++;
 				}
 			}
+
 			break;
 		}
 
