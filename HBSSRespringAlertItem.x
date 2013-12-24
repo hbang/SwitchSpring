@@ -1,6 +1,8 @@
 #import "HBSSRespringAlertItem.h"
 #import <SpringBoard/SpringBoard.h>
+#import <SpringBoard/SBApplication.h>
 #import <SpringBoard/SBAppSliderController.h>
+#import <SpringBoard/SBMediaController.h>
 #import <UIKit/UIAlertView+Private.h>
 
 SBAppSliderController *controller;
@@ -33,18 +35,16 @@ SBAppSliderController *controller;
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)index {
 	void (^resetScrollViews)() = ^{
-		[UIView animateWithDuration:0.3f animations:^{
-			for (UIScrollView *scrollView in controller.contentScrollView.subviews) {
-				if ([scrollView isKindOfClass:UIScrollView.class]) {
-					scrollView.contentOffset = CGPointZero;
-				}
+		for (UIScrollView *scrollView in controller.contentScrollView.subviews) {
+			if ([scrollView isKindOfClass:UIScrollView.class]) {
+				scrollView.contentOffset = CGPointZero;
 			}
-		}];
+		}
 	};
 
 	switch (index) {
 		case 0:
-			[(SpringBoard *)[UIApplication sharedApplication] relaunchSpringBoard];
+			[(SpringBoard *)[UIApplication sharedApplication] _relaunchSpringBoardNow];
 			break;
 
 		case 1:
@@ -65,7 +65,7 @@ SBAppSliderController *controller;
 		}
 
 		case 2:
-			resetScrollViews();
+			[UIView animateWithDuration:0.3f animations:resetScrollViews];
 			break;
 	}
 }
