@@ -68,10 +68,8 @@ SBAppSliderController *controller;
 			[UIView animateWithDuration:0.3f animations:resetScrollViews];
 			break;
 	}
-}
 
-- (BOOL)allowMenuButtonDismissal {
-	return YES;
+	[self dismiss];
 }
 
 %end
