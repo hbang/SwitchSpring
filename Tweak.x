@@ -1,4 +1,8 @@
-#import <SpringBoard/SBAlertItemsController.h>
+@interface SBAlertItemsController : NSObject
++(id)sharedInstance;
+-(void)activateAlertItem:(id)arg1;
+@end
+
 #import "HBSSRespringAlertItem.h"
 
 @class SBAppSliderScrollingViewController;
@@ -14,9 +18,18 @@
 		%orig;
 		return;
 	}
+	
 
-	HBSSRespringAlertItem *alert = [[[%c(HBSSRespringAlertItem) alloc] initWithController:self] autorelease];
-	[(SBAlertItemsController *)[%c(SBAlertItemsController) sharedInstance] activateAlertItem:alert];
+	if([self sliderScrollerItemCount:self.pageController]==1){
+	
+		[(SpringBoard *)[UIApplication sharedApplication] _relaunchSpringBoardNow];
+		
+	}else{
+	
+		HBSSRespringAlertItem *alert = [[[%c(HBSSRespringAlertItem) alloc] initWithController:self] autorelease];
+		[(SBAlertItemsController *)[%c(SBAlertItemsController) sharedInstance] activateAlertItem:alert];
+		
+	}
 }
 
 %end
