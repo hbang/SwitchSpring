@@ -1,9 +1,5 @@
 #import "HBSSRespringAlertItem.h"
-#import <SpringBoard/SpringBoard.h>
-#import <SpringBoard/SBApplication.h>
-#import <SpringBoard/SBAppSliderController.h>
-#import <SpringBoard/SBMediaController.h>
-#import <UIKit/UIAlertView+Private.h>
+
 
 SBAppSliderController *controller;
 
