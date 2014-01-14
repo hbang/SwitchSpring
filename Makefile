@@ -1,4 +1,4 @@
-TARGET = :clang:7.1
+TARGET = :clang
 ARCHS = armv7 arm64
 
 include theos/makefiles/common.mk
@@ -12,4 +12,4 @@ SwitchSpring_FRAMEWORKS = UIKit CoreGraphics
 include $(THEOS_MAKE_PATH)/tweak.mk
 
 after-install::
-	./inject.sh
+	install.exec spring
