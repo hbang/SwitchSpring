@@ -4,6 +4,7 @@
 #import <SpringBoard/SBAppSliderController.h>
 #import <SpringBoard/SBMediaController.h>
 #import <UIKit/UIAlertView+Private.h>
+#import <UIKit/UIViewController+Private.h>
 
 SBAppSliderController *controller;
 
@@ -58,9 +59,7 @@ SBAppSliderController *controller;
 			NSUInteger current = 1;
 
 			for (NSUInteger i = 1; i < count; i++) {
-				if ([[controller _displayIDAtIndex:current] isEqualToString:nowPlayingApp]) {
-					continue;
-				} else if ([controller sliderScroller:controller.pageController isIndexRemovable:current]) {
+				if ([controller sliderScroller:controller.pageController isIndexRemovable:current] && ![[controller _displayIDAtIndex:current] isEqualToString:nowPlayingApp]) {
 					[controller sliderScroller:controller.pageController itemWantsToBeRemoved:current];
 				} else {
 					current++;
