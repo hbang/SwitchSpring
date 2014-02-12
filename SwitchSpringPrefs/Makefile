@@ -4,7 +4,7 @@ ARCHS = armv7 arm64
 include theos/makefiles/common.mk
 
 BUNDLE_NAME = SwitchSpringPrefs
-SwitchSpringPrefs_FILES = HBSSRootListController.x HBSSAboutListController.m
+SwitchSpringPrefs_FILES = HBSSRootListController.x HBSSAboutListController.m HBSSLinkListController.m
 SwitchSpringPrefs_INSTALL_PATH = /Library/PreferenceBundles
 SwitchSpringPrefs_FRAMEWORKS = UIKit CoreGraphics
 SwitchSpringPrefs_PRIVATE_FRAMEWORKS = Preferences

@@ -31,10 +31,16 @@
 
 	NSDictionary *settings = [NSDictionary dictionaryWithContentsOfFile:[NSHomeDirectory() stringByAppendingPathComponent:@"/Library/Preferences/ws.hbang.switchspring.plist"]];
 	
-	if(![settings objectForKey:@"actionOption"]){
-		PSSpecifier *actionSpecifier = [self specifierForID:@"ActionControl"];
-		[self setPreferenceValue:@(3) specifier:actionSpecifier];
-		[self reloadSpecifier:actionSpecifier];
+	if(![settings objectForKey:@"swipeUpAction"]){
+		PSSpecifier *upSpecifier = [self specifierForID:@"SwipeUpList"];
+		[self setPreferenceValue:@(0) specifier:upSpecifier];
+		[self reloadSpecifier:upSpecifier];
+	}
+
+	if(![settings objectForKey:@"swipeDownAction"]){
+		PSSpecifier *downSpecifier = [self specifierForID:@"SwipeDownList"];
+		[self setPreferenceValue:@(3) specifier:downSpecifier];
+		[self reloadSpecifier:downSpecifier];
 	}
 }
 
