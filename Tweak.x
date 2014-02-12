@@ -17,10 +17,8 @@
 		HBSSRespringAlertItem *alert = [[[%c(HBSSRespringAlertItem) alloc] initWithController:self] autorelease];
 		if(actionOption == 0)
 			[(SBAlertItemsController *)[%c(SBAlertItemsController) sharedInstance] activateAlertItem:alert];
-		else{
-			NSLog(@"[SwitchSpring] DEBUG TAPPED: %@ WITH %i", alert, actionOption);
+		else
 			[alert reactToOption:(actionOption-1)];
-		}
 
 		return;
 	}
