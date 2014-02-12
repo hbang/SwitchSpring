@@ -36,6 +36,7 @@
 			<key>cell</key>  		<string>PSLinkListCell</string>
 			<key>defaults</key>		<string>ws.hbang.switchspring</string>
  			<key>detail</key> 		<string>HBSSLinkListController</string>
+ 			<key>enabled</key> 		<false/>
 			<key>id</key> 			<string>SwipeDownList</string>
  			<key>key</key> 			<string>swipeDownAction</string>
  			<key>label</key> 		<string>Swipe Down</string>

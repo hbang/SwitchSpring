@@ -12,13 +12,13 @@
 -(void)sliderScroller:(SBAppSliderScrollingViewController *)scroller itemWantsToBeRemoved:(NSUInteger)index {
 	if(index == 0) {
 		NSDictionary *settings = [NSDictionary dictionaryWithContentsOfFile:[NSHomeDirectory() stringByAppendingPathComponent:@"/Library/Preferences/ws.hbang.switchspring.plist"]];
-		int actionOption = [[settings objectForKey:@"actionOption"] intValue];
+		int swipeUpAction = [[settings objectForKey:@"swipeUpAction"] intValue];
 
 		HBSSRespringAlertItem *alert = [[[%c(HBSSRespringAlertItem) alloc] initWithController:self] autorelease];
-		if(actionOption == 0)
+		if(swipeUpAction == 0)
 			[(SBAlertItemsController *)[%c(SBAlertItemsController) sharedInstance] activateAlertItem:alert];
 		else
-			[alert reactToOption:(actionOption-1)];
+			[alert reactToOption:(swipeUpAction-1)];
 
 		return;
 	}
