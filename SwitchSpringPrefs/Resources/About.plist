@@ -37,6 +37,8 @@
 
 		<dict>
 			<key>cell</key>
+			<string>PSTableCell</string>
+			<key>cellClass</key>
 			<string>HBTwitterCell</string>
 			<key>label</key>
 			<string>Adam D</string>
@@ -46,6 +48,8 @@
 
 		<dict>
 			<key>cell</key>
+			<string>PSTableCell</string>
+			<key>cellClass</key>
 			<string>HBTwitterCell</string>
 			<key>label</key>
 			<string>Julian Weiss</string>
