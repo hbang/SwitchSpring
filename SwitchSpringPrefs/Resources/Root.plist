@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+
+		<dict>
+			<key>cell</key>			<string>PSGroupCell</string>
+			<key>label</key>		<string>Action</string>
+			<key>footerText</key> 	<string>Adjust what SwitchSpring does when swiping on homescreen.</string>
+		</dict>
+		
+		<dict>
+			<key>cell</key>  		<string>PSSegmentCell</string>
+			<key>defaults</key>		<string>ws.hbang.switchspring</string>
+			<key>id</key> 			<string>ActionControl</string>
+ 			<key>key</key> 			<string>actionOption</string>
+ 			<key>validTitles</key> <array>
+ 				<string>Prompt</string>
+ 				<string>Restart</string>
+ 				<string>Quit Apps</string>
+ 			</array>
+ 			<key>validValues</key>
+ 			<array>
+ 				<integer>0</integer>
+ 				<integer>1</integer>
+ 				<integer>2</integer>
+ 			</array>
+		</dict>
+
+	</array>
+	<key>title</key>
+	<string>SwitchSpring</string>
+</dict>
+</plist>

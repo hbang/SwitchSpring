@@ -35,6 +35,11 @@ SBAppSliderController *controller;
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)index {
+	[self reactToOption:(int)index];
+	[self dismiss];
+}
+
+%new - (void)reactToOption:(int)option {
 	void (^resetScrollViews)() = ^{
 		for (UIScrollView *scrollView in controller.contentScrollView.subviews) {
 			if ([scrollView isKindOfClass:UIScrollView.class]) {
@@ -43,7 +48,7 @@ SBAppSliderController *controller;
 		}
 	};
 
-	switch (index) {
+	switch(option){
 		case 0:
 			[(SpringBoard *)[UIApplication sharedApplication] _relaunchSpringBoardNow];
 			break;
@@ -73,8 +78,6 @@ SBAppSliderController *controller;
 			[UIView animateWithDuration:0.3f animations:resetScrollViews];
 			break;
 	}
-
-	[self dismiss];
 }
 
 %end

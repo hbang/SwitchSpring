@@ -1,5 +1,6 @@
 Package: ws.hbang.switchspring
 Name: SwitchSpring
+Pre-Depends: firmware (>= 7.0)
 Depends: mobilesubstrate
 Version: 1.0.1
 Architecture: iphoneos-arm
@@ -7,3 +8,4 @@ Description: Respring from iOS 7 app switcher
 Maintainer: HASHBANG Productions <support@hbang.ws>
 Author: HASHBANG Productions <support@hbang.ws>
 Section: Tweaks
+Icon: file:///Library/PreferenceBundles/SwitchSpringPrefs.bundle/icon.png
