@@ -29,6 +29,17 @@
  			</array>
 		</dict>
 
+		<dict>
+			<key>cell</key>			<string>PSGroupCell</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>  			<string>PSLinkCell</string>
+			<key>label</key>			<string>About</string>
+			<key>detail</key> 			<string>HBSSAboutListController</string>
+ 			<key>isController</key> 	<true/>
+		</dict>
+
 	</array>
 	<key>title</key>
 	<string>SwitchSpring</string>
