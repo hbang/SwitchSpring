@@ -1,9 +1,9 @@
 #import <SpringBoardUI/SBAlertItem.h>
 
-@class SBAppSliderController;
+@class SBAppSwitcherController, SBDisplayItem;
 
 @interface HBSSRespringAlertItem : SBAlertItem
 
-- (instancetype)initWithController:(SBAppSliderController *)controller;
+- (instancetype)initWithController:(SBAppSwitcherController *)controller;
 
 @end
